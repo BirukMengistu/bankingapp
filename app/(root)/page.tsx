@@ -1,10 +1,11 @@
 import { HeaderBox } from "@/components/Header";
+import RightSideBar from "@/components/RightSideBar";
 import TotalBalanceBox from "@/components/TotalBalanceBox";
 import Image from "next/image";
 
 export default function Home() {
   const LoggedIn ={
-    firstname:'Birdev'
+    firstName:'Birdev'
   }
   return (
    <div className="home">
@@ -23,10 +24,14 @@ export default function Home() {
       />
       
     </header>
+    
     </div>
-    <div>
-    <h1>Home</h1>
-    </div>
+
+    <RightSideBar
+    user={LoggedIn}
+    transaction={[]}
+    banks={1}
+    />
    </div>
   );
 }

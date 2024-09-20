@@ -79,8 +79,11 @@ const MobileNav = ({user}:{
             </SheetClose>
             }
          )}
+           {'/* User data  */'}
+             USER
              </nav>
            </SheetClose>
+           Footer
           </div>
          
         </nav>
