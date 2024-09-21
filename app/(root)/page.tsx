@@ -5,33 +5,33 @@ import Image from "next/image";
 
 export default function Home() {
   const LoggedIn ={
-    firstName:'Birdev'
+    firstName:'Birdev',
+    lastName:'Tech',
+    email:'birdev_tech@myemail.com'
   }
   return (
-   <div className="home">
+   <section className="home">
     <div className="home-content">
     <header className="home-header">
-      <HeaderBox
-      type='greeting'
-      title='Welcome'
-      user ={LoggedIn?.firstname||'Guest'}
-      subtext='Acces and manage your account and transction'
-      />
-      <TotalBalanceBox
-      accounts={[]}
-      totalBanks={1}
-      totalCurrentBalance={1200}
-      />
+          <HeaderBox
+          type='greeting'
+          title='Welcome'
+          user ={LoggedIn?.firstName||'Guest'}
+          subtext='Acces and manage your account and transction'
+          />
+          <TotalBalanceBox
+          accounts={[]}
+          totalBanks={1}
+          totalCurrentBalance={1200}
+          />
       
     </header>
-    
     </div>
-
     <RightSideBar
     user={LoggedIn}
     transaction={[]}
-    banks={1}
+    banks={[{currentBalance:123.45 },{ currentBalance:2346.46 }]}
     />
-   </div>
+   </section>
   );
 }
