@@ -27,11 +27,11 @@ export default function Home() {
       
     </header>
     </div>
-    <RightSideBar
-    user={LoggedIn}
-    transaction={[]}
-    banks={[{currentBalance:123.45 },{ currentBalance:2346.46 }]}
-    />
+        <RightSideBar
+         user={LoggedIn}
+         transaction={[]}
+         banks={[{currentBalance:123.45 },{ currentBalance:2346.46 }]}
+        />
    </section>
   );
 }
