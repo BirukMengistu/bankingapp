@@ -208,3 +208,13 @@ export const authFormSchema = (type: string) => z.object({
   email: z.string().email(),
   password: z.string().min(8),
 })
+
+export function formatName(name: string): string {
+  if (!name) return '';
+  
+  return name
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+}
+

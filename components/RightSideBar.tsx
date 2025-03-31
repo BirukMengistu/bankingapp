@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import BankCard from './BankCard'
+import { formatName } from '../lib/utils';
 
 const RightSideBar = ({user, transactions,banks}:RightSidebarProps) => {
   return (
@@ -9,16 +10,17 @@ const RightSideBar = ({user, transactions,banks}:RightSidebarProps) => {
       <section className="flex flex-col pb-8">
         <div className="profile-banner" />
         <div className="profile">
-          <div className="profile-img">
-            <span className="text-5xl font-bold text-blue-500">{user.firstName[0]}</span>
+        <div className="profile-img">
+            <span className="text-5xl font-bold text-blue-500">{user?.name[0].toUpperCase()}</span>
           </div>
 
           <div className="profile-details">
             <h1 className='profile-name'>
-              {user?.firstName} {user?.lastName}
+              {formatName(user?.name)}
+             
             </h1>
             <p className="profile-email">
-              {user.email}
+              {user?.email}
             </p>
           </div>
         </div>
@@ -43,7 +45,7 @@ const RightSideBar = ({user, transactions,banks}:RightSidebarProps) => {
                         <BankCard 
                         key={banks[0].$id}
                         account={banks[0]}
-                        userName={`${user.firstName} ${user.lastName}`}
+                        userName={user?.name}
                         showBalance={false}
     />
                     </div>
@@ -52,7 +54,7 @@ const RightSideBar = ({user, transactions,banks}:RightSidebarProps) => {
                 <BankCard 
                   key={banks[1].$id}
                   account={banks[1]}
-                  userName={`${user.firstName} ${user.lastName}`}
+                  userName={user?.name[0]}
                   showBalance={false}
                 />
               </div>

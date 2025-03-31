@@ -29,8 +29,8 @@ declare type User = {
   $id: string;
   email: string;
   userId: string;
-  dwollaCustomerUrl: string;
-  dwollaCustomerId: string;
+  dwollaCustomerUrl?: string;
+  dwollaCustomerId?: string;
   firstName: string;
   lastName: string;
   name: string;
@@ -150,10 +150,10 @@ declare interface BankInfoProps {
 }
 
 declare interface HeaderBoxProps {
-  type?: "title" | "greeting";
+  type: 'greeting';
   title: string;
+  user: string;
   subtext: string;
-  user?: string;
 }
 
 declare interface MobileNavProps {
